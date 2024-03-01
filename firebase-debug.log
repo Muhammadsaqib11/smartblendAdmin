@@ -1,0 +1,112 @@
+[debug] [2024-02-21T14:43:40.097Z] ----------------------------------------------------------------------
+[debug] [2024-02-21T14:43:40.099Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-02-21T14:43:40.099Z] CLI Version:   11.29.1
+[debug] [2024-02-21T14:43:40.099Z] Platform:      win32
+[debug] [2024-02-21T14:43:40.099Z] Node Version:  v18.0.0
+[debug] [2024-02-21T14:43:40.101Z] Time:          Wed Feb 21 2024 19:43:40 GMT+0500 (Pakistan Standard Time)
+[debug] [2024-02-21T14:43:40.101Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-02-21T14:43:40.104Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-02-21T14:43:40.250Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-02-21T14:43:40.251Z] > authorizing via signed-in user (shujaurr18@gmail.com)
+[debug] [2024-02-21T14:43:40.251Z] [iam] checking project myorderadmin-d30e4 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-02-21T14:43:40.252Z] > refreshing access token with scopes: []
+[debug] [2024-02-21T14:43:40.253Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-02-21T14:43:40.253Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-02-21T14:44:01.316Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2024-02-21T14:44:01.317Z] > refreshing access token with scopes: []
+[debug] [2024-02-21T14:44:01.317Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-02-21T14:44:01.317Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[warn] !  Unable to fetch the CLI MOTD and remote config. 
+[debug] [2024-02-21T14:44:01.394Z] Failed to fetch MOTD FirebaseError: Failed to make request to https://firebase-public.firebaseio.com/cli.json
+[debug] [2024-02-21T14:44:31.504Z] ----------------------------------------------------------------------
+[debug] [2024-02-21T14:44:31.506Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-02-21T14:44:31.507Z] CLI Version:   11.29.1
+[debug] [2024-02-21T14:44:31.507Z] Platform:      win32
+[debug] [2024-02-21T14:44:31.507Z] Node Version:  v18.0.0
+[debug] [2024-02-21T14:44:31.508Z] Time:          Wed Feb 21 2024 19:44:31 GMT+0500 (Pakistan Standard Time)
+[debug] [2024-02-21T14:44:31.508Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-02-21T14:44:31.512Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-02-21T14:44:31.697Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-02-21T14:44:31.698Z] > authorizing via signed-in user (shujaurr18@gmail.com)
+[debug] [2024-02-21T14:44:31.698Z] [iam] checking project myorderadmin-d30e4 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-02-21T14:44:31.699Z] > refreshing access token with scopes: []
+[debug] [2024-02-21T14:44:31.700Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-02-21T14:44:31.701Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[warn] !  Unable to fetch the CLI MOTD and remote config. 
+[debug] [2024-02-21T14:44:52.760Z] Failed to fetch MOTD FirebaseError: Failed to make request to https://firebase-public.firebaseio.com/cli.json
+[debug] [2024-02-21T14:44:52.761Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2024-02-21T14:44:52.762Z] > refreshing access token with scopes: []
+[debug] [2024-02-21T14:44:52.763Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-02-21T14:44:52.763Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-02-21T14:45:13.831Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2024-02-21T14:45:38.230Z] ----------------------------------------------------------------------
+[debug] [2024-02-21T14:45:38.234Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-02-21T14:45:38.235Z] CLI Version:   11.29.1
+[debug] [2024-02-21T14:45:38.235Z] Platform:      win32
+[debug] [2024-02-21T14:45:38.235Z] Node Version:  v18.0.0
+[debug] [2024-02-21T14:45:38.236Z] Time:          Wed Feb 21 2024 19:45:38 GMT+0500 (Pakistan Standard Time)
+[debug] [2024-02-21T14:45:38.236Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-02-21T14:45:38.241Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-02-21T14:45:38.533Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-02-21T14:45:38.534Z] > authorizing via signed-in user (shujaurr18@gmail.com)
+[debug] [2024-02-21T14:45:38.534Z] [iam] checking project myorderadmin-d30e4 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-02-21T14:45:38.536Z] > refreshing access token with scopes: []
+[debug] [2024-02-21T14:45:38.538Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-02-21T14:45:38.538Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-02-21T14:46:14.589Z] ----------------------------------------------------------------------
+[debug] [2024-02-21T14:46:14.591Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-02-21T14:46:14.592Z] CLI Version:   11.29.1
+[debug] [2024-02-21T14:46:14.592Z] Platform:      win32
+[debug] [2024-02-21T14:46:14.592Z] Node Version:  v18.0.0
+[debug] [2024-02-21T14:46:14.593Z] Time:          Wed Feb 21 2024 19:46:14 GMT+0500 (Pakistan Standard Time)
+[debug] [2024-02-21T14:46:14.593Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-02-21T14:46:14.597Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-02-21T14:46:14.828Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-02-21T14:46:14.829Z] > authorizing via signed-in user (shujaurr18@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Githubproject\react\reactjs-track-my-order
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-02-21T14:46:20.087Z] Using project from CLI flag: myorderadmin-d30e4
+[debug] [2024-02-21T14:46:20.088Z] > refreshing access token with scopes: []
+[debug] [2024-02-21T14:46:20.089Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-02-21T14:46:20.089Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[warn] !  Unable to fetch the CLI MOTD and remote config. 
+[debug] [2024-02-21T14:46:35.897Z] Failed to fetch MOTD FirebaseError: Failed to make request to https://firebase-public.firebaseio.com/cli.json
+[debug] [2024-02-21T14:46:41.143Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2024-02-21T14:46:46.172Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\sgining star\AppData\Roaming\nvm\v18.0.0\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7)
+[error] 
+[error] Error: An unexpected error has occurred.
