@@ -76,9 +76,10 @@ export const apiLogin = async (data) => {
 
     const userData = await userCredential.json();
     const user = userData?.data;
-    console.log("userData", user);
+    console.log("userDatalogin", user);
 
     localStorage.setItem('t', user.access_token || '');
+    localStorage.setItem('user', JSON.stringify(user.data) || '');
     notification.success({ message: 'User Login successfully!' });
 
     return user;
@@ -126,6 +127,8 @@ export const apiRegister = async (data) => {
     console.log("userData", user);
 
     localStorage.setItem('t', user.access_token || '');
+    localStorage.setItem('user', JSON.stringify(user.data) || '');
+
     notification.success({ message: 'User registered successfully!' });
 
     return user;

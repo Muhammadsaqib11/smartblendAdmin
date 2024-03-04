@@ -46,6 +46,9 @@ type DataType = {
 };
 const UserPage: FC = () => {
   const fileInputRef = useRef(null);
+  const userDataFromLocalStorage = JSON.parse(localStorage.getItem('user'));
+console.log("userDataFromLocalStorage", userDataFromLocalStorage);
+
 
   const token = localStorage.getItem("t")
   const [isAddCustomerModalVisible, setAddCustomerModalVisible] = useState(false);
@@ -165,15 +168,22 @@ const dispatch=useDispatch()
                   'Authorization': `Bearer ${token}`,
                   'Content-Type': 'application/json' // Specify content type as JSON
               },
-              body: JSON.stringify({ filename: result.file }) // Stringify the object
+              body: JSON.stringify({ filename: result.file, userId:editedCustomerData?._id }) // Stringify the object
           });
 
           const bloodReportresult = await bloodresponse.json();
           if (bloodresponse.ok) {
             setLoading(false)
     notification.success({ message: 'File Upload Successfully!' });
+    setUserDetailModal(false)
 
 
+          }
+          else{
+            notification.error({ message: 'Internal server Error!' });
+    setLoading(false)
+    setUserDetailModal(false)
+            
           }
           console.log("bloodReportresult", bloodReportresult)
 
@@ -187,6 +197,8 @@ const dispatch=useDispatch()
         }
       } else {
     notification.error({ message: 'Please select a CSV file.!' });
+    setUserDetailModal(false)
+
 
  
       }
@@ -405,7 +417,7 @@ const dispatch=useDispatch()
             <TuneIcon className='mr-2'  />
             Manage Roles</Button> */}
             </div>
-            <div className="col-md-10">
+            {/* <div className="col-md-10">
             <Button size='large' 
             className='radius-large w-100 mt-3'
              type='primary'
@@ -422,7 +434,7 @@ const dispatch=useDispatch()
         style={{ display: 'none' }}
         onChange={handleFileChange}
       />
-            </div>
+            </div> */}
 
 
           </div>
@@ -504,10 +516,30 @@ const dispatch=useDispatch()
 </div>
         <div className="d-flex mt-3 gap-4">
 
-         <Button size='large' type='ghost' className='font-weight-medium w-100'
+         <Button size='large' type='ghost' className='adius-large w-100 mt-3'
            onClick={() => setUserDetailModal(false)}>
             close
           </Button>
+
+          <div className="">
+            <Button size='large' 
+            className='radius-large w-100 mt-3'
+             type='primary'
+             onClick={handleClickbutton}
+              disabled={loading}
+              >
+        <AddCircleOutlineIcon className='mr-2'/>
+        Add Report
+      </Button>
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept=".csv"
+        style={{ display: 'none' }}
+        onChange={handleFileChange}
+      />
+            </div>
+         
         
         </div>
       </Modal>
