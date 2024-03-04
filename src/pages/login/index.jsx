@@ -66,9 +66,9 @@ const LoginForm = () => {
 
         const search = formatSearch(location.search);
         const from = search.from || { pathname: '/' };
-  
+
         navigate(from);
-  
+
         if (form.remember) {
           localStorage.setItem('username', form.username);
           localStorage.setItem('password', form.password);
@@ -81,13 +81,13 @@ const LoginForm = () => {
         setLoading(false)
 
       }
-      else{
+      else {
         console.log("ressssssssssssssssssssss")
         setLoading(false)
 
       }
     }
-    else{
+    else {
       setLoading(true)
 
       console.log("form", form);
@@ -96,9 +96,9 @@ const LoginForm = () => {
       if (!!res) {
         const search = formatSearch(location.search);
         const from = search.from || { pathname: '/' };
-  
+
         navigate(from);
-  
+
         if (form.remember) {
           localStorage.setItem('username', form.username);
           localStorage.setItem('password', form.password);
@@ -111,124 +111,124 @@ const LoginForm = () => {
         setLoading(false)
 
       }
-      else{
+      else {
         setLoading(false)
 
-      }  
       }
+    }
   };
 
   return (
 
     <Spin tip="Loading..." indicator={antIcon} spinning={loading}>
-    <div className="login-page">
-      <div className="container-fluid">
-        <div className="row  row-reverse-mobile   align-items-center">
-          <div className="col-md-8 bgLogin">
-            <img src={whiteLogo} height={130} alt="" />
-          </div>
-          <div className="col-md-4">
-            <Form form={form} layout="vertical"
-            
-            onFinish={onFinished} className="login-page-form px-3">
+      <div className="login-page">
+        <div className="container-fluid">
+          <div className="row  row-reverse-mobile   align-items-center">
+            <div className="col-md-8 bgLogin">
+              <img src={whiteLogo} height={130} alt="" />
+            </div>
+            <div className="col-md-4">
+              <Form form={form} layout="vertical"
 
-              {!register ? (   <h1 className="mb-4">Login</h1>):(   <h1 className="mb-4">Register</h1>)}
-              {!register ? (          <p className=" font-weight-bold mb-4 welcome-text">Welcome Back!</p>):
-              (           <p className=" font-weight-bold mb-4 welcome-text">Welcome !</p>)}
-           
-      
-              <Form.Item
-                label="UserName"
-                name="username"
-                rules={[
-                  {
-                    required: true,
-                    // message: formatMessage({
-                    //   id: 'gloabal.tips.enterUsernameMessage',
-                    // }),
-                  },
-                ]}
-              >
-                {/* {email} */}
-                <Input
-                  // defaultValue={email}
-                  className="radius-large primaryInput"
-                  placeholder="username"
-                />
-              </Form.Item>
-              <Form.Item
-                label="Password"
-                name="password"
-                rules={[
-                  {
-                    required: true,
-                    message: formatMessage({
-                      id: 'gloabal.tips.enterPasswordMessage',
-                    }),
-                  },
-                ]}
-              >
-                <Input.Password
-                  className="radius-large primaryInput"
-                  placeholder={formatMessage({
-                    id: 'gloabal.tips.password',
-                  })}
-                  iconRender={visible => (visible ? <EyeOutlined /> : <EyeInvisibleOutlined />)}
-                />
-              </Form.Item>
-              <div className="d-flex justify-content-between align-items-center">
-                <Form.Item name="remember" valuePropName="checked" initialValue={rememberMe}>
-                  <Checkbox className="text-capitalize">Remember Me</Checkbox>
-                </Form.Item>
-                <p
-                  className="text-primary font-weight-medium cursor-pointer text-uppercase"
-                  onClick={onForgotPasswordClick}
+                onFinish={onFinished} className="login-page-form px-3">
+
+                {!register ? (<h1 className="mb-4">Login</h1>) : (<h1 className="mb-4">Register</h1>)}
+                {!register ? (<p className=" font-weight-bold mb-4 welcome-text">Welcome Back!</p>) :
+                  (<p className=" font-weight-bold mb-4 welcome-text">Welcome !</p>)}
+
+
+                <Form.Item
+                  label="UserName"
+                  name="username"
+                  rules={[
+                    {
+                      required: true,
+                      // message: formatMessage({
+                      //   id: 'gloabal.tips.enterUsernameMessage',
+                      // }),
+                    },
+                  ]}
                 >
-                  Forgot Password?
-                </p>
-              </div>
-              <div className="d-flex justify-content-between align-items-center">
-              <Form.Item >
-                <Button htmlType="submit" type="primary" className="btn-padding">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    className="mr-2 feather feather-log-in"
+                  {/* {email} */}
+                  <Input
+                    // defaultValue={email}
+                    className="radius-large primaryInput"
+                    placeholder="username"
+                  />
+                </Form.Item>
+                <Form.Item
+                  label="Password"
+                  name="password"
+                  rules={[
+                    {
+                      required: true,
+                      message: formatMessage({
+                        id: 'gloabal.tips.enterPasswordMessage',
+                      }),
+                    },
+                  ]}
+                >
+                  <Input.Password
+                    className="radius-large primaryInput"
+                    placeholder={formatMessage({
+                      id: 'gloabal.tips.password',
+                    })}
+                    iconRender={visible => (visible ? <EyeOutlined /> : <EyeInvisibleOutlined />)}
+                  />
+                </Form.Item>
+                <div className="d-flex justify-content-between align-items-center">
+                  <Form.Item name="remember" valuePropName="checked" initialValue={rememberMe}>
+                    <Checkbox className="text-capitalize">Remember Me</Checkbox>
+                  </Form.Item>
+                  <p
+                    className="text-primary font-weight-medium cursor-pointer text-uppercase"
+                    onClick={onForgotPasswordClick}
                   >
-                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
-                    <polyline points="10 17 15 12 10 7" />
-                    <line x1="15" y1="12" x2="3" y2="12" />
-                  </svg>{' '}
-                  {!register ? (
-                    loading ? "loading..." : 'login'
-                  ) : (
-                    loading ? "loading..." : 'Register'
-                  )}
-                </Button>
+                    Forgot Password?
+                  </p>
+                </div>
+                <div className="d-flex justify-content-between align-items-center">
+                  <Form.Item >
+                    <Button htmlType="submit" type="primary" className="btn-padding">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        className="mr-2 feather feather-log-in"
+                      >
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                        <polyline points="10 17 15 12 10 7" />
+                        <line x1="15" y1="12" x2="3" y2="12" />
+                      </svg>{' '}
+                      {!register ? (
+                        loading ? "loading..." : 'login'
+                      ) : (
+                        loading ? "loading..." : 'Register'
+                      )}
+                    </Button>
 
-                 
-                         </Form.Item>
-                         <span 
-                         onClick={() => setRegister(!register)} 
-                          className="text-primary font-weight-medium cursor-pointer text-uppercase"
-                         >
-                          {register ? 'login' :'Register'}
-                          </span>  
-              </div>
-             
-            </Form>
+
+                  </Form.Item>
+                  <span
+                    onClick={() => setRegister(!register)}
+                    className="text-primary font-weight-medium cursor-pointer text-uppercase"
+                  >
+                    {register ? 'login' : 'Register'}
+                  </span>
+                </div>
+
+              </Form>
+            </div>
           </div>
         </div>
+        <ForgotPasswordModal visible={forgotPasswordModalVisible} onCancel={onCancelForgotPassword} />
       </div>
-      <ForgotPasswordModal visible={forgotPasswordModalVisible} onCancel={onCancelForgotPassword} />
-    </div>
     </Spin>
   );
 };
