@@ -20,7 +20,7 @@ const App = () => {
   const { locale } = useSelector(state => state.user);
   const { theme, loading } = useSelector(state => state.global);
   const dispatch = useDispatch();
-
+console.log("theme", theme)
   const setTheme = (dark = true) => {
     dispatch(
       setGlobalState({
@@ -33,7 +33,7 @@ const App = () => {
   useEffect(() => {
     // dispatch(fetchUserProfile(localStorage.getItem('t')));
 
-    setTheme(theme === 'dark');
+    setTheme(theme === 'light');
 
     // watch system theme change
     if (!localStorage.getItem('theme')) {
@@ -56,6 +56,15 @@ const App = () => {
       dayjs.locale('zh-cn');
     }
   }, [locale]);
+  
+   useEffect(() => {
+    const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDarkMode) {
+      document.body.classList.remove('dark-mode'); // Remove dark mode class from body
+    } else {
+      document.body.classList.add('light-mode'); // Add light mode class to body
+    }
+  }, []);
 
   /**
    * handler function that passes locale
@@ -86,7 +95,7 @@ const App = () => {
               spinning={loading}
               className="app-loading-wrapper"
               style={{
-                backgroundColor: theme === 'dark' ? 'rgba(0, 0, 0, 0.44)' : 'rgba(255, 255, 255, 0.44)',
+                backgroundColor: theme === 'light' ? 'rgba(0, 0, 0, 0.44)' : 'rgba(255, 255, 255, 0.44)',
               }}
               tip={<LocaleFormatter id="gloabal.tips.loading" />}
             ></Spin>
