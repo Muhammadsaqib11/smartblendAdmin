@@ -37,7 +37,7 @@ console.log("theme", theme)
 
     // watch system theme change
     if (!localStorage.getItem('theme')) {
-      const mql = window.matchMedia('(prefers-color-scheme: dark)');
+      const mql = window.matchMedia('(prefers-color-scheme: light)');
 
       function matchMode(e) {
         setTheme(e.matches);
@@ -57,14 +57,7 @@ console.log("theme", theme)
     }
   }, [locale]);
   
-   useEffect(() => {
-    const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (prefersDarkMode) {
-      document.body.classList.remove('dark-mode'); // Remove dark mode class from body
-    } else {
-      document.body.classList.add('light-mode'); // Add light mode class to body
-    }
-  }, []);
+
 
   /**
    * handler function that passes locale
@@ -85,7 +78,7 @@ console.log("theme", theme)
       componentSize="middle"
       theme={{
         token: { colorPrimary: '#2B547E' },
-        algorithm: theme === 'dark' ? antdTheme.darkAlgorithm : antdTheme.defaultAlgorithm,
+        algorithm: theme === 'light' ? antdTheme.darkAlgorithm : antdTheme.defaultAlgorithm,
       }}
     >
       <IntlProvider locale={locale.split('_')[0]} messages={localeConfig[locale]}>
