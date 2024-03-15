@@ -215,12 +215,12 @@ const LoginForm = () => {
 
 
                   </Form.Item>
-                  <span
+                  {/* <span
                     onClick={() => setRegister(!register)}
                     className="text-primary font-weight-medium cursor-pointer text-uppercase"
                   >
                     {register ? 'login' : 'Register'}
-                  </span>
+                  </span> */}
                 </div>
 
               </Form>
