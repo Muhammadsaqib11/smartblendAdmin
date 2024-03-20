@@ -180,12 +180,12 @@ const LoginForm = () => {
                   <Form.Item name="remember" valuePropName="checked" initialValue={rememberMe}>
                     <Checkbox className="text-capitalize">Remember Me</Checkbox>
                   </Form.Item>
-                  <p
+                  {/* <p
                     className="text-primary font-weight-medium cursor-pointer text-uppercase"
                     onClick={onForgotPasswordClick}
                   >
                     Forgot Password?
-                  </p>
+                  </p> */}
                 </div>
                 <div className="d-flex justify-content-between align-items-center">
                   <Form.Item >
