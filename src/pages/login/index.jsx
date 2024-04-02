@@ -152,8 +152,9 @@ const LoginForm = () => {
                   {/* {email} */}
                   <Input
                     // defaultValue={email}
-                    className="radius-large primaryInput"
+                    className="radius-large primaryInput background"
                     placeholder="username"
+                    style={{backgroundColor:'white' , color:"black"}}
                   />
                 </Form.Item>
                 <Form.Item
@@ -168,13 +169,18 @@ const LoginForm = () => {
                     },
                   ]}
                 >
-                  <Input.Password
-                    className="radius-large primaryInput"
-                    placeholder={formatMessage({
-                      id: 'gloabal.tips.password',
-                    })}
-                    iconRender={visible => (visible ? <EyeOutlined /> : <EyeInvisibleOutlined />)}
-                  />
+                 <Input.Password
+    className="radius-large primaryInput text-black background"
+    placeholder={formatMessage({
+        id: 'gloabal.tips.password',
+    })}
+    iconRender={visible => (visible ? <EyeOutlined /> : <EyeInvisibleOutlined />)}
+    style={{ backgroundColor: 'white' }}
+    // Add a more specific CSS selector to override existing styles
+    suffix={<EyeInvisibleOutlined />}
+    
+
+/>
                 </Form.Item>
                 <div className="d-flex justify-content-between align-items-center">
                   <Form.Item name="remember" valuePropName="checked" initialValue={rememberMe}>

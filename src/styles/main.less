@@ -6,12 +6,23 @@ body,
   // font-family: sans-serif !important;
 
 }
+#root {
+  color-scheme:light;
+}
 
 body {
   margin: 0;
   font-size: 14px;
   font-family: sans-serif !important;
+  background-color: white;
 }
+
+@media (forced-colors: active) {
+  :root {
+      color-scheme: light;
+  }
+}
+
 
 a {
   text-decoration: underline;

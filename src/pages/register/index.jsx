@@ -114,9 +114,10 @@ const RegisterForm = () => {
                     }),
                   },
                 ]}
+                style={{backgroundColor:'white'}}
               >
                 <Input.Password
-                  className="radius-large primaryInput"
+                  className="radius-large primaryInput input"
                   placeholder="password"
                   iconRender={visible => (visible ? <EyeOutlined /> : <EyeInvisibleOutlined />)}
                 />
@@ -125,12 +126,12 @@ const RegisterForm = () => {
                 <Form.Item name="remember" valuePropName="checked" initialValue={rememberMe}>
                   <Checkbox className="text-capitalize">Remember Me</Checkbox>
                 </Form.Item>
-                <p
+                {/* <p
                   className="text-primary font-weight-medium cursor-pointer text-uppercase"
                   onClick={onForgotPasswordClick}
                 >
                   Forgot Password?
-                </p>
+                </p> */}
               </div>
               <Form.Item>
                 <Button htmlType="submit" type="primary" className="btn-padding">

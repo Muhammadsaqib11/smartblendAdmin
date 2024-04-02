@@ -47,6 +47,26 @@ console.log("theme", theme)
     }
   }, []);
 
+  useEffect(() => {
+    // Check if dark mode is preferred by the user
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+console.log("darkModeMediaQuery, " , darkModeMediaQuery);
+    // Set initial dark mode state based on user preference
+    setTheme(darkModeMediaQuery.matches);
+
+    // Listen for changes in dark mode preference
+    const darkModeChangeListener = (e) => {
+      setTheme(e.matches);
+    };
+
+    darkModeMediaQuery.addEventListener('change', darkModeChangeListener);
+
+    // Clean up event listener on component unmount
+    return () => {
+      darkModeMediaQuery.removeEventListener('change', darkModeChangeListener);
+    };
+  }, []);
+
   // set the locale for the user
   // more languages options can be added here
   useEffect(() => {
@@ -72,14 +92,16 @@ console.log("theme", theme)
     }
   };
 
+  console.log("theme", theme)
+
   return (
     <ConfigProvider
       locale={getAntdLocale()}
       componentSize="middle"
-      theme={{
-        token: { colorPrimary: '#2B547E' },
-        algorithm: theme === 'light' ? antdTheme.darkAlgorithm : antdTheme.defaultAlgorithm,
-      }}
+      // theme={{
+      //   token: { colorPrimary: '#2B547E' },
+      //   algorithm: theme === 'light' ? antdTheme.darkAlgorithm : antdTheme.defaultAlgorithm,
+      // }}
     >
       <IntlProvider locale={locale.split('_')[0]} messages={localeConfig[locale]}>
         <HistoryRouter history={history}>
@@ -87,9 +109,9 @@ console.log("theme", theme)
             <Spin
               spinning={loading}
               className="app-loading-wrapper"
-              style={{
-                backgroundColor: theme === 'light' ? 'rgba(0, 0, 0, 0.44)' : 'rgba(255, 255, 255, 0.44)',
-              }}
+              // style={{
+              //   backgroundColor: theme === 'light' ? 'rgba(0, 0, 0, 0.44)' : 'rgba(255, 255, 255, 0.44)',
+              // }}
               tip={<LocaleFormatter id="gloabal.tips.loading" />}
             ></Spin>
             <RenderRouter />
